@@ -18,16 +18,14 @@ public class Tablero {
 	
 	public String[] resolverConflictos()
 	{
-		
 		String[] totalConflictos = new String[cantReinas];
 		String aux = "";
 		int cantConflictos;
 		double angulo;
 		int auxReinaMasCercana, auxNumeroReinaAnterior, conflictoSegunAngulo, conflictoSegunAnguloOpuesto;
 		int[] auxConflictos;
-		for (int i=0; i<cantReinas-1; i++)
+		for (int i=0; i<cantReinas; i++) // for (int i=0; i<cantReinas-1; i++)
 		{
-
 			for(int j=i+1; j<cantReinas; j++)
 			{
 				angulo = this.reinas[i].anguloAReina(this.reinas[j]);
