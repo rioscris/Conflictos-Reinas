@@ -1,16 +1,32 @@
 package conflictos;
 
 public class Reina {
-	int x,y;
-	int numReina;
+	private int x,y;
+	private int numReina;
+	public int getNumReina() {
+		return numReina;
+	}
+
+	public void setNumReina(int numReina) {
+		this.numReina = numReina;
+	}
+
+	private int conflictos[];
 	
-	
+	public int getConflicto(int indiceConflicto) {
+		return this.conflictos[indiceConflicto];
+	}
+
+	public void setConflicto(int indiceConflicto, int numReina) {
+		this.conflictos[indiceConflicto] = numReina;
+	}
+
 	public Reina(int x, int y, int numReina)
 	{
 		this.x = x;
 		this.y = y;
 		this.numReina = numReina+1;
-		
+		this.conflictos = new int[8];
 	}
 	/*
 	public boolean estaMasCerca(Reina otraReina)
