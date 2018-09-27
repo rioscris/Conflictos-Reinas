@@ -1,5 +1,7 @@
 package conflictos;
 
+import java.util.Arrays;
+
 public class Reina {
 	private int x,y;
 	private int numReina;
@@ -47,6 +49,12 @@ public class Reina {
 		double distancia1 = Math.sqrt(Math.pow(this.x-reina1.x, 2)+Math.pow(this.y-reina1.y, 2));
 		double distancia2 = Math.sqrt(Math.pow(this.x-reina2.x, 2)+Math.pow(this.y-reina2.y, 2));
 		return distancia1<distancia2?reina1.numReina:reina2.numReina;
+	}
+	
+	public int[] ordenarConflictos()
+	{
+		Arrays.sort(this.conflictos);
+		return this.conflictos;
 	}
 	
 }

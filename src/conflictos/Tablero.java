@@ -1,6 +1,5 @@
 package conflictos;
 
-import java.util.Arrays;
 
 public class Tablero {
 	private Reina reinas[];
@@ -25,6 +24,7 @@ public class Tablero {
 		int cantConflictos;
 		double angulo;
 		int auxReinaMasCercana, auxNumeroReinaAnterior, conflictoSegunAngulo, conflictoSegunAnguloOpuesto;
+		int[] auxConflictos;
 		for (int i=0; i<cantReinas-1; i++)
 		{
 
@@ -61,18 +61,18 @@ public class Tablero {
 						
 				}
 			}
-			Arrays.sort(conflictos);
+			auxConflictos = this.reinas[i].ordenarConflictos();
 			cantConflictos=0;
 			aux="";
 			for(int h=0;h<8;h++)
 			{
-				if(conflictos[h]!=0)
+				if(auxConflictos[h]!=0)
 				{
 					cantConflictos++;
-					aux+=" " + conflictos[h];
+					aux+=" " + auxConflictos[h];
 				}
 			}
-			totalConflictos[i] = cantConflictos+aux;
+			totalConflictos[i] = cantConflictos+aux; // Conforma la cadena final
 		}
 		
 		return totalConflictos;
